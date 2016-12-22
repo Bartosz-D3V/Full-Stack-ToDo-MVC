@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script data-main="js/app" src="lib/require.js"></script>
+    <script src="lib/jquery-2.2.4.min.js"></script>
+    <script src="lib/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <link href="lib/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="col-lg-5 col-lg-offset-4 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 div-top">
+        <h1>What should be done?</h1>
+        <div class="ui">
+            <input class="form-control textfield-size" type="text" placeholder="Add your task here..." id="taskField"/>
+            <button type="button" class="btn-success btn btn-default glyphicon glyphicon-plus" id="addNew">Add</button>
+        </div>
+        <div id="listOfToDos" class="listOfTasks">
+
+        </div>
+        <script id="ToDoTemplate" type="text/x-handlebars-template">
+            <div class="col-lg-12">
+                <div class="toDo">
+                    <div class="input-group">
+                 <span class="input-group-addon">
+                      <input type="checkbox" aria-label="..." {{#if complete}}checked{{/if}}>
+                 </span>
+                        <input type="text" class="form-control {{#if complete}} done {{/if}}" aria-label="..." readonly
+                               value="{{title}}" id="description">
+                        <span class="input-group-addon">
+                     <i class="glyphicon glyphicon-pencil"></i>
+                 </span>
+                        <span class="input-group-addon">
+                   <i class="glyphicon glyphicon-remove"></i>
+                  </span>
+                        <span class="input-group-addon">
+                     <i class="glyphicon glyphicon-ok"></i>
+                 </span>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <script id="ToDoFooterTemplate" type="text/x-handlebars-template">
+            <div class="col-lg-12">
+                <h4>Finished {{numOfCompleted}} out of {{numOfTasks}}</h4>
+            </div>
+        </script>
+        <div id="toDosFooter" class="statistics">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.div-top {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    float: left;
+}
+
+.textfield-size {
+    width: 65%;
+    float: left;
+}
+
+button {
+    float: inherit;
+    margin-left: 2%;
+}
+
+.ui {
+    margin-top: 5%;
+}
+
+.toDo {
+    margin-top: 3%;
+    margin-left: -10%;
+    width: 100%;
+}
+
+.done {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.listOfTasks{
+    padding-top: 5%;
+}
+
+.statistics{
+    margin-left: 16%;
+    margin-top: 17%;
+}
