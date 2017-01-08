@@ -47,4 +47,24 @@ public class ToDo {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ToDo)) return false;
+
+        ToDo toDo = (ToDo) o;
+
+        if (getId() != toDo.getId()) return false;
+        if (isComplete() != toDo.isComplete()) return false;
+        return getTitle().equals(toDo.getTitle());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getId();
+        result = 31 * result + getTitle().hashCode();
+        result = 31 * result + (isComplete() ? 1 : 0);
+        return result;
+    }
 }
