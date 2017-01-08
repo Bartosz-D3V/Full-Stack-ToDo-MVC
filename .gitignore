@@ -269,3 +269,6 @@ app/css/compiled
 ### Browserify bundle file ignore ###
 bundle.js
 js/compiled
+
+### Libraries folder ###
+webapp/lib
