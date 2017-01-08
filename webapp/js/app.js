@@ -1,15 +1,11 @@
-/**
- * Created by User on 30/06/2016.
- */
 requirejs.config({
     baseUrl: 'js',
     paths: {
         main: '../js/app/main/main',
-        jquery: '../lib/jquery-2.2.4.min',
+        jquery: '../lib/jquery',
         underscore: '../lib/underscore',
-        backbone: '../lib/backbone',
-        backboneMarionette: '../lib/backbone.marionette',
-        handlebars: '../lib/handlebars-v4.0.5',
+        backbone: '../lib/backbone-min',
+        handlebars: '../lib/handlebars',
         toDo: '../js/app/models/toDo',
         toDoCollection: '../js/app/collections/toDoCollection',
         mainView: 'app/views/mainView',

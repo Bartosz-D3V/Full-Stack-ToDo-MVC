@@ -8,9 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by User on 16/06/2016.
- */
+
 @Service
 public class ToDoServiceImpl implements ToDoService {
 

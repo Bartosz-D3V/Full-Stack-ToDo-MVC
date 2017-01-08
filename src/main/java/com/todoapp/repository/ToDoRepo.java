@@ -4,9 +4,7 @@ import com.todoapp.domain.ToDo;
 
 import java.util.List;
 
-/**
- * Created by User on 16/06/2016.
- */
+
 public interface ToDoRepo {
     List<ToDo> getToDos();
 

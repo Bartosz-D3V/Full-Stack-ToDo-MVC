@@ -1,6 +1,3 @@
-/**
- * Created by User on 21/07/2016.
- */
 define([
     'backbone',
     'underscore',

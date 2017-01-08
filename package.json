@@ -1,0 +1,45 @@
+{
+  "name": "fullstacktodoapp",
+  "version": "1.5.0",
+  "description": "Full stack project covering front & back -end. To do application is sync with back-end app written in Spring MVC to manage daily to do tasks.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bartosz-D3V/full-stack-todo-mvc.git"
+  },
+  "keywords": [
+    "todo",
+    "to",
+    "do",
+    "spring",
+    "mvc",
+    "handlebars",
+    "backbone",
+    "jquery",
+    "full",
+    "stack",
+    "back",
+    "end",
+    "front"
+  ],
+  "author": "Bartosz-D3V",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bartosz-D3V/full-stack-todo-mvc/issues"
+  },
+  "homepage": "https://github.com/Bartosz-D3V/full-stack-todo-mvc#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "bootstrap": "^3.3.7",
+    "handlebars": "^4.0.6",
+    "jquery": "^3.1.1",
+    "requirejs": "^2.3.2",
+    "underscore": "^1.8.3"
+  }
+}

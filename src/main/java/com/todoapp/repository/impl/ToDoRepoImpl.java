@@ -7,9 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by User on 16/06/2016.
- */
+
 @Repository
 public class ToDoRepoImpl implements ToDoRepo {
     private List<ToDo> toDos = new ArrayList<ToDo>();

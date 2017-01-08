@@ -1,18 +1,14 @@
 package com.todoapp.controller;
 
-import javax.validation.Valid;
-
 import com.todoapp.domain.ToDo;
 import com.todoapp.service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Created by User on 16/06/2016.
- */
+
 @CrossOrigin(origins = "http://localhost:63342")
 @RestController
 @RequestMapping(value = "/todo")

@@ -5,9 +5,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
 
-/**
- * Created by User on 16/06/2016.
- */
+
 public class ToDo {
 
     @NotNull

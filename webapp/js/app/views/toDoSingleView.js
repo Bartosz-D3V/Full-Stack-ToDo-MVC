@@ -1,8 +1,3 @@
-/**
- * Created by User on 07/07/2016.
- * Functions with underscore (_) at the beginning of the function name shall
- * not be called manually.
- */
 define([
     'backbone',
     'underscore',
