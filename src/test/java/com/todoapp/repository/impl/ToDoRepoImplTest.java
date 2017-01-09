@@ -73,7 +73,9 @@ public class ToDoRepoImplTest {
 
     @Test
     public void removeToDo() throws Exception {
-
+        int tempSize = toDoRepo.getToDos().size();
+        toDoRepo.removeToDo(toDo1.getId());
+        assertEquals(tempSize - 1, toDoRepo.getToDos().size());
     }
 
 }

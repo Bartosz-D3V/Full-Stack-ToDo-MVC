@@ -3,12 +3,13 @@ package com.todoapp.controller;
 import com.todoapp.domain.ToDo;
 import com.todoapp.service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
-
+@EnableAutoConfiguration
 @CrossOrigin(origins = "http://localhost:63342")
 @RestController
 @RequestMapping(value = "/todo")

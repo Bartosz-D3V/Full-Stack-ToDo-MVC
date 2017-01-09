@@ -5,6 +5,7 @@ import com.todoapp.repository.ToDoRepo;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -50,7 +51,6 @@ public class ToDoRepoImpl implements ToDoRepo {
     public void updateToDo(ToDo toDo) {
         for (ToDo singleToDo : toDos) {
             if (singleToDo.getId() == (toDo.getId())) {
-                singleToDo.setId(toDo.getId());
                 singleToDo.setTitle(toDo.getTitle());
                 singleToDo.setComplete(toDo.isComplete());
             }
@@ -59,9 +59,11 @@ public class ToDoRepoImpl implements ToDoRepo {
 
     @Override
     public void removeToDo(int id) {
-        for (ToDo singleToDo : toDos) {
-            if (singleToDo.getId() == id) {
-                toDos.remove(singleToDo);
+        Iterator<ToDo> i = toDos.iterator();
+        while (i.hasNext()) {
+            if (i.next().getId() == id) {
+                i.remove();
+                break;
             }
         }
     }
