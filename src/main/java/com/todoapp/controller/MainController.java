@@ -39,11 +39,6 @@ public class MainController {
         toDoService.updateToDo(toDo);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public void updateToDoById(@PathVariable int id, @ModelAttribute ToDo toDo) {
-        toDoService.updateToDoById(id, toDo);
-    }
-
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void removeToDo(@PathVariable int id) {
         toDoService.removeToDo(id);

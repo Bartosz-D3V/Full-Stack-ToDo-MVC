@@ -14,7 +14,5 @@ public interface ToDoRepo {
 
     void updateToDo(ToDo toDo);
 
-    void updateToDoById(int id, ToDo toDo);
-
     void removeToDo(int id);
 }

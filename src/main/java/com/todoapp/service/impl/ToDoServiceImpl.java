@@ -36,11 +36,6 @@ public class ToDoServiceImpl implements ToDoService {
     }
 
     @Override
-    public void updateToDoById(int id, ToDo toDo){
-        toDoRepo.updateToDoById(id, toDo);
-    }
-
-    @Override
     public void removeToDo(int id) {
         toDoRepo.removeToDo(id);
     }

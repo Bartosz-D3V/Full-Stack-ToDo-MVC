@@ -72,11 +72,6 @@ public class ToDoRepoImplTest {
     }
 
     @Test
-    public void updateToDoById() throws Exception {
-
-    }
-
-    @Test
     public void removeToDo() throws Exception {
 
     }

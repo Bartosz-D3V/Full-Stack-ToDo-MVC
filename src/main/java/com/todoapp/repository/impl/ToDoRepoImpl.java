@@ -58,16 +58,6 @@ public class ToDoRepoImpl implements ToDoRepo {
     }
 
     @Override
-    public void updateToDoById(int id, ToDo toDo) {
-        for (ToDo singleToDo : toDos) {
-            if (singleToDo.getId() == id) {
-                singleToDo.setTitle(toDo.getTitle());
-                singleToDo.setComplete(toDo.isComplete());
-            }
-        }
-    }
-
-    @Override
     public void removeToDo(int id) {
         for (ToDo singleToDo : toDos) {
             if (singleToDo.getId() == id) {
