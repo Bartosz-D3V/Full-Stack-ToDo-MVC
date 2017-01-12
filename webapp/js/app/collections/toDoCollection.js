@@ -18,7 +18,7 @@ define([
         postNewTask: function (toDo) {
             $.ajax({
                 type: 'POST',
-                url: "http://localhost:8080/todo/",
+                url: "http://localhost:8080/todo",
                 data: toDo.toJSON(),
                 dataType: "JSON",
                 async: true
