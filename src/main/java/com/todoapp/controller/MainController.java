@@ -10,9 +10,9 @@ import javax.validation.Valid;
 import java.util.List;
 
 @EnableAutoConfiguration
-@CrossOrigin(origins = "http://localhost:63342")
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping(value = "/todo")
+@RequestMapping("/todo")
 public class MainController {
 
     private ToDoService toDoService;
