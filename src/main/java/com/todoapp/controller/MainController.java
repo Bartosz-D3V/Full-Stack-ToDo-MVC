@@ -29,7 +29,7 @@ public class MainController {
         return toDoService.getToDos();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public ToDo getSingleToDo(@PathVariable int id) {
         return toDoService.getSingleToDo(id);

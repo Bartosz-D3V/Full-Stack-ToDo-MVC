@@ -21,9 +21,8 @@ define([
                 url: "http://localhost:8080/todo/",
                 data: toDo.toJSON(),
                 dataType: "JSON",
-                async: false
+                async: true
             });
-            console.log(toDo.toJSON())
             this.add(toDo);
         },
 
@@ -32,7 +31,7 @@ define([
             $.ajax({
                 type: 'DELETE',
                 url: "http://localhost:8080/todo/" + index,
-                async: false
+                async: true
             });
             this.remove(toDo, {silent: true});
         },
@@ -44,7 +43,7 @@ define([
                 url: "http://localhost:8080/todo/" + index,
                 data: toDo.toJSON(),
                 dataType: "JSON",
-                async: false
+                async: true
             });
             this.remove(toDo, {silent: true});
             this.add(toDo, {at: toDo.getId()});

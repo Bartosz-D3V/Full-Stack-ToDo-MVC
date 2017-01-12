@@ -3,7 +3,7 @@
 ## Clarification ##
 This is one of my first "Full-stack" projects.
 It is a simple to do MVC application created using technology stack described in the next section.
-The pure purpose of this project was to learn & practice specific libraries.
+The pure purpose of this project was to learn & practice specific libraries and frameworks.
 
 ## Technologies ##
 
@@ -11,13 +11,15 @@ The pure purpose of this project was to learn & practice specific libraries.
 * Java
 * Spring Boot
 * Hibernate Validator
-* Junit
 * Maven
+* Junit
+* Mockito
 
 **Front-end:**
+
+* JavaScript
 * BackboneJS
 * HandlebarsJS
-* JavaScript
 * jQuery
 * RequireJS
 * HTML & CSS
@@ -31,3 +33,5 @@ The pure purpose of this project was to learn & practice specific libraries.
 5. Run default gulp task
 5. Open index.html
 6. That's it!
+
+Instead of using IDE you can also run mvn and deploy the jar using i.e. Apache Tomcat.
