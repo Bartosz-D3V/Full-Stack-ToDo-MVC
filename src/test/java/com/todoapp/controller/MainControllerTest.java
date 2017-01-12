@@ -1,53 +1,48 @@
 package com.todoapp.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.javaws.Main;
 import com.todoapp.domain.ToDo;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.json.JacksonJsonParser;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
-import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 public class MainControllerTest {
-//    private MockMvc mockMvc;
-//    private ObjectMapper objectMapper = new ObjectMapper();
-//    @Rule
-//    public MockitoRule mockitoRule = MockitoJUnit.rule();
+    private final MockMvc mockMvc = standaloneSetup(new MainController()).build();
+
+    private ToDo toDo;
 
     @Before
     public void setUp() throws Exception {
-//        this.mockMvc = standaloneSetup(new MainController()).build();
+        toDo = new ToDo(0, "Use MockMVC", true);
     }
 
     @Test
     public void testGetAllToDos() throws Exception {
-
+        mockMvc.perform(get("/todo"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
     }
 
     @Test
     public void testGetSingleToDo() throws Exception {
-//        ToDo toDo = new ToDo(0, "Commit changes", true);
-//        String toDoJSON = objectMapper.writeValueAsString(toDo);
-//        assertTrue(toDoJSON != null);
+
+        mockMvc.perform(get("/todo/{id}", 0))
+                .andExpect(status().isOk());
     }
 
     @Test
     public void testCreateToDo() throws Exception {
-
+        mockMvc.perform(post("/todo")
+                .param("id", String.valueOf(toDo.getId()))
+                .param("title", toDo.getTitle())
+                .param("completed", String.valueOf(toDo.isComplete())))
+                .andExpect(status().isOk());
     }
 
     @Test

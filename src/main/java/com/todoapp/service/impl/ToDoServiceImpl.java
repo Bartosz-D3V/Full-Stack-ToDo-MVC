@@ -2,6 +2,7 @@ package com.todoapp.service.impl;
 
 import com.todoapp.domain.ToDo;
 import com.todoapp.repository.ToDoRepo;
+import com.todoapp.repository.impl.ToDoRepoImpl;
 import com.todoapp.service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,11 @@ import java.util.List;
 @Service
 public class ToDoServiceImpl implements ToDoService {
 
-    @Autowired
-    ToDoRepo toDoRepo;
+    private ToDoRepo toDoRepo;
+
+    public ToDoServiceImpl() {
+        this.toDoRepo = new ToDoRepoImpl();
+    }
 
     @Override
     public List<ToDo> getToDos() {

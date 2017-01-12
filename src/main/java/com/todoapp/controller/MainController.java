@@ -2,8 +2,10 @@ package com.todoapp.controller;
 
 import com.todoapp.domain.ToDo;
 import com.todoapp.service.ToDoService;
+import com.todoapp.service.impl.ToDoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -15,10 +17,13 @@ import java.util.List;
 @RequestMapping(value = "/todo")
 public class MainController {
 
-    @Autowired
-    ToDoService toDoService;
+    private ToDoService toDoService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    public MainController() {
+        this.toDoService = new ToDoServiceImpl();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public List<ToDo> getAllToDos() {
         return toDoService.getToDos();
