@@ -6,11 +6,10 @@ import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.hamcrest.Matchers.hasSize;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
@@ -67,6 +66,7 @@ public class MainControllerTest {
                 .andExpect(status().isOk());
         mockMvc.perform(get(url + "/{id}", 0))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(toDo.getId()))
                 .andExpect(jsonPath("$.title").value(toDo.getTitle()))
                 .andExpect(jsonPath("$.complete").value(toDo.isComplete()));
@@ -74,6 +74,11 @@ public class MainControllerTest {
 
     @Test
     public void testRemoveToDo() throws Exception {
-
+        mockMvc.perform(delete(url + "/{id}", 0))
+                .andExpect(status().isOk());
+        mockMvc.perform(get(url))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(0)));
     }
 }
