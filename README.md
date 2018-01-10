@@ -26,12 +26,12 @@ The pure purpose of this project was to learn & practice specific libraries and 
 * Bootstrap
 * Gulp
 
-## How to run? ##
-1. git clone to your folder
-2. Open as a project
-3. Run using Spring Boot main file
-5. Run default gulp task
-5. Open index.html
-6. That's it!
+## Requirements ##
+This project relies on Gulp Task Runner
 
-Instead of using IDE you can also run mvn and deploy the jar using i.e. Apache Tomcat.
+## How to run? ##
+1. git clone
+2. gulp
+3. mvn install
+4. mvn spring-boot: run
+5. open index.html
